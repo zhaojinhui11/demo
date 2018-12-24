@@ -1,3 +1,4 @@
+import { log } from "../common/util";
 import template from './login-page.html';
 
 const name = 'loginPage';  
