@@ -1,5 +1,5 @@
 export default {
-  name: 'userService',
+  name: 'loginService',
   fn: function ($http) {
     'ngInject'
     this.fetch = () => $http.get('/someapi/login');

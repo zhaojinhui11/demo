@@ -1,6 +1,13 @@
 {
   "USER": "用户",
-  "USER_NAME": "用户名",
+  "User_Name": "用户名",
+  "Location":"地址",
+  "Age":"年龄",
+  "Edit":"编辑",
+  "Delete":"删除",
+  "Modify":"修改",
+  "Filter":"过滤",
+  "Hello":"您好！",
   "ERROR_500": "服务端出错......"
 }
 

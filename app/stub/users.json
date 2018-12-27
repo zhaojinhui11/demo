@@ -1,9 +1,14 @@
 
 [
-    {
+{
     "name": "SuperMan",
     "location": "Atfjow Gwofe",
     "age":38
+},
+{
+    "name": "BatMan",
+    "location": "Wayne Manor",
+    "age":36
 },
 {
     "name": "WuKong",
@@ -11,8 +16,18 @@
     "age":500
 },
 {
-    "name": "Batman",
-    "location": "Wayne Manor",
-    "age":36
+    "name": "WuJing",
+    "location": "China",
+    "age":300
+},
+{
+    "name": "WuJie",
+    "location": "China",
+    "age":400
+},
+{
+    "name": "XiaoTang",
+    "location": "China",
+    "age":100
 }
 ]

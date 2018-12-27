@@ -1,22 +1,22 @@
 
 [
     {
-        "username": "Admin",
+        "username": "admin",
         "password": "xxx",
         "age":38
     },
     {
-        "username": "SuperMan",
+        "username": "zhangsan",
         "password": "123456",
         "age":38
     },
     { 
-        "username": "WuKong",
+        "username": "lisi",
         "password": "123456",
         "age":500
     },
     {
-        "username": "Batman",
+        "username": "wangwu",
         "password": "123456",
         "age":36
     }
