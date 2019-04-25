@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<head>
+	<meta charset="UTF-8" />
+	<title>List box</title>
+	<style type="text/css">
+		.select {
+			width: 600px;
+			height: 220px;
+			margin: 100px auto;
+		}
+		
+		.select div {
+			float: left;
+		}
+		
+		.select .select-item {
+			padding: 5px 20px;
+		}
+		
+		.select .select-item select {
+			width: 150px;
+			height: 200px;
+			border: 1px #eee solid;
+			padding: 4px;
+			font-size: 14px;
+		}
+		
+		.btn-item p {
+			margin-top: 16px;
+		}
+		
+		.btn-item p span {
+			display: block;
+			text-align: center;
+			width: 100px;
+			height: 30px;
+			cursor: pointer;
+			font-size: 14px;
+			border: 1px solid #EEEEEE;
+			line-height: 30px;
+			font-size: 20px;
+		}
+	</style>	
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+	<script>	
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+		$scope.names = ["Options1", "Options2", "Options3", "Options4", "Options5", "Options6", "Options7", "Options8", "Options9", "Options10", "Options11", "Options12", "Options13", "Options14", "Options15", "Options16"];
+	});
+	</script>
+	
+	<script type="text/javascript">
+		$(function() {
+			//Move to the right
+			$(document).on('click', '#add', function() {
+				if(!$("#select1 option").is(":selected")) {
+					alert("Please select the option to move！")
+				} else {				
+					var selectA = $('#select1 option:selected');
+					var selectAS= document.getElementById("select1").selected
+                    var selectB = $('#select2');					
+					var len=selectA.size();
+					var textA=selectA.text();
+					for(var i=0;i<len;i++){
+					    if(selectA.size()==1){
+                        if(document.getElementById("select2").textContent.indexOf(selectA[i].innerHTML)==-1){
+						//document.getElementById("select2").textContent.indexOf(selectA[i].innerHTML)==-1,查不到则等于-1
+						//alert(selectA.size());
+						//alert(selectA[i].innerHTML);
+						//alert(document.getElementById("select2").textContent);
+						//alert(document.getElementById("select2").textContent.search(selectA[i].innerHTML));
+						document.getElementById("select2").options.add(new Option(selectA[i].innerHTML,selectA[i].value))
+						}else{
+						alert("重复");
+						break;
+						}}else{
+						if(document.getElementById("select2").textContent.indexOf(selectA[i].innerHTML)==-1){
+						document.getElementById("select2").options.add(new Option(selectA[i].innerHTML,selectA[i].value))}else{
+						//document.getElementById("select2").textContent.replace(selectA[i].innerHTML);
+						}
+						
+						}
+					}
+				}
+			});
+			//Delete right
+			$(document).on('click', '#remove', function() {
+				if(!$("#select2 option").is(":selected")) {
+					alert("Please select the option to move！")
+				} else {				    
+				confirm("Are you sure you want to delete this country(ies)?");
+				var selectB = $('#select2 option:selected');
+				for(var i=0;i<selectB.size();i++){										
+						document.getElementById("select2").options.remove(document.getElementById("select2").selectedIndex);
+				}
+				}
+			});
+		});
+	</script>
+</head>
+ 
+<body>
+	<div>
+		<div class="select">			
+			<div ng-app="myApp" ng-controller="myCtrl" class="select-item">
+            <select ng-model="selectedSite" multiple="multiple" id="select1" ng-options="item for item in names">
+            </select>
+            </div>
+			<div class="btn-item">
+				<p><span id="add" >Add</span></p>
+				<p><span id="remove" >Delete</span></p>
+			</div>
+			<div class="select-item">
+				<select multiple="multiple" id="select2"></select>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
