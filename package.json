@@ -56,7 +56,7 @@
     "jest-transform-stub": "^1.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.3.0",
-    "protractor": "^5.4.1",
+    "protractor": "^5.4.4",
     "ramda": "^0.25.0",
     "raml2html": "^7.2.0",
     "raw-loader": "^0.5.1",
